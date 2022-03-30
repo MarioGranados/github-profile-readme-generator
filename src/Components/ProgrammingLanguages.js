@@ -23,6 +23,17 @@ const ProgrammingLanguages = () => {
         "MATLAB"];
     let rows = [];
 
+    let data = (e) => {
+        e.preventDefault();
+        let checkedLang = []
+        for(let i = 0; i < languages.length; i++) {
+            if (checkedState[i]) {
+                checkedLang.push(languages[i]);
+            }
+        }
+        console.log(checkedLang);
+    }
+
     const [checkedState, setCheckedState] = useState(
         new Array(languages.length).fill(false));
    // console.log(checkedState);
@@ -33,11 +44,10 @@ const ProgrammingLanguages = () => {
                     <input className="form-check-input"
                            type="checkbox" id={languages[i]}
                            value={languages[i]}
-                           checked={checkedState[i]}
                            onChange={() => {
-                               checkedState[i] = true;
+                               checkedState[i] = !checkedState[i];
                                setCheckedState(checkedState)
-                               console.log(checkedState)
+                               //console.log(checkedState)
                            }}
                     />
                     <label className="form-check-label" htmlFor={languages[i]}>{languages[i]}</label>
@@ -45,8 +55,10 @@ const ProgrammingLanguages = () => {
             );
         }
         return (
-            <form>
+            <form onSubmit={data}>
                 {rows}
+
+                <button type={"submit"}>submit</button>
             </form>
         )
 }

@@ -24,8 +24,11 @@ const Hero = () => {
     }
     return(<>
         <div className="container">
-            <h1 className='font-weight-bold text-center'>Github Readme Generator</h1>
-            <p className={'text-center lead'}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <h1 className='font-weight-bold text-center'>Github Profile Readme Generator</h1>
+            <p className={'text-center lead'}>
+                I made this generator for my class, feel free to use it.
+                Probably has a bunch of problems, but don't we all?
+            </p>
             <hr/>
             <h3 className='font-weight-bold'>Greeting/Opener</h3>
         <Header onSubmit={setData}/>
