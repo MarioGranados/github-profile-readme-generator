@@ -21,6 +21,7 @@ const Header = (props) => {
                        onChange={e => {
                            setGreeting(e.target.value)
                        }}
+                       value={greeting}
                 />
             </div>
             <div className="form-group">

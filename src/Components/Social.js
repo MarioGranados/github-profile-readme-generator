@@ -7,17 +7,13 @@ const Social = (props) => {
     let rows = [];
 
     const [input, setInput] = useState([]);
-    let flag = false
 
-    let handleSubmit = (e) => {
-        if (flag) {
-            setInput(arr => [...arr, e.target.value]);
-            console.log(input)
-        }
+    let handleChange = (e) => {
+        setInput(arr => [...arr, e.target.value]);
+        console.log(input)
     }
 
     let formSubmit = (e) => {
-        flag = true
         e.preventDefault();
         props.onSubmit(input);
     }
@@ -31,7 +27,7 @@ const Social = (props) => {
                            className="form-control"
                            placeholder={col1[i]}
                            onChange={
-                               handleSubmit
+                               handleChange
                            }
                     />
                 </div>
@@ -41,7 +37,7 @@ const Social = (props) => {
                            className="form-control"
                            placeholder={col2[i]}
                            onChange={
-                               handleSubmit
+                               handleChange
                            }
                     />
                 </div>
