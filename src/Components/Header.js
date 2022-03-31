@@ -7,13 +7,14 @@ const Header = (props) => {
 
     /*props to parent component*/
     let handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         let arr = [greeting, subtitle]
+
         props.onSubmit(arr);
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onChange={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="greeting">Greeting</label>
                 <input type="text" className="form-control" id="greeting"
@@ -33,7 +34,6 @@ const Header = (props) => {
                        }}
                 />
             </div>
-            <button type='submit'>submit</button>
         </form>
     );
 }

@@ -1,20 +1,22 @@
-const Testing = () => {
-    let col1 = ["Jasmine", "Karma", "Mocha", "Jest", "Selenium", "Cypress", "Puppeteer"];
-    let rows = [];
-    for (let i = 1; i < col1.length; i++) {
-        rows.push(
-            <>
-                <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id={col1[i]} value={col1[i]}/>
-                    <label className="form-check-label" htmlFor="inlineCheckbox1">{col1[i]}</label>
-                </div>
-            </>
-        );
+import {useState} from "react";
+import {checkBoxes, data} from "./Utils/Utils";
+
+const Testing = (props) => {
+    let tools = ["Jasmine", "Karma", "Mocha", "Jest", "Selenium", "Cypress", "Puppeteer"];
+    const [checkedState, setCheckedState] = useState(
+        new Array(tools.length).fill(false));
+    let testing = [];
+    let rows = checkBoxes(checkedState, tools, setCheckedState)
+    let handleSubmit = (e) => {
+        e.preventDefault();
+        testing = data(checkedState, tools);
+        props.onSubmit(testing);
     }
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             {rows}
-        </>
+            <button type='submit'>submit</button>
+        </form>
     )
 
 }

@@ -1,5 +1,9 @@
-const FrontEnd = () => {
-    let col1 = ["Web.com",
+import {checkBoxes, data} from "./Utils/Utils";
+import {useState} from "react";
+
+const FrontEnd = (props) => {
+    let arr = [];
+    let tools = ["Web.com",
     "Angular.JS",
     "Chrome DevTools",
     "Sass",
@@ -12,21 +16,20 @@ const FrontEnd = () => {
     "Bootstrap",
         "CSS",
     "Sketch"]
-    let rows = [];
-    for (let i = 1; i < col1.length; i++) {
-        rows.push(
-            <>
-                <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id={col1[i]} value={col1[i]}/>
-                    <label className="form-check-label" htmlFor="inlineCheckbox1">{col1[i]}</label>
-                </div>
-            </>
-        );
+    const [checkedState, setCheckedState] = useState(
+        new Array(tools.length).fill(false));
+    let frontEndArr = [];
+    let rows = checkBoxes(checkedState, tools, setCheckedState)
+    let handleSubmit = (e) => {
+        e.preventDefault();
+        frontEndArr = data(checkedState, tools);
+        props.onSubmit(frontEndArr);
     }
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             {rows}
-        </>
+            <button type='submit'>submit</button>
+        </form>
     )
 
 }

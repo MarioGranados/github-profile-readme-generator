@@ -1,20 +1,26 @@
-const Database = () => {
-    let col1 = ["mongodb", "mysql", "postgresql", "redis", "oracle", "couchdb", "hive", "real", "mssql"];
-    let rows = [];
-    for (let i = 1; i < col1.length; i++) {
-        rows.push(
-            <>
-                <div className="form-check form-check-inline">
-                    <input className="form-check-input" type="checkbox" id={col1[i]} value={col1[i]}/>
-                    <label className="form-check-label" htmlFor="inlineCheckbox1">{col1[i]}</label>
-                </div>
-            </>
-        );
+import {useState} from "react";
+import {checkBoxes, data} from "./Utils/Utils";
+
+const Database = (props) => {
+
+    let tools = ["mongodb", "mysql", "postgresql", "redis", "oracle", "couchdb", "hive", "real", "mssql"];
+    let databaseArr = [];
+
+    const [checkedState, setCheckedState] = useState(
+        new Array(tools.length).fill(false));
+
+    let rows = checkBoxes(checkedState, tools, setCheckedState);
+
+    let handleSubmit = (e) => {
+        e.preventDefault();
+        databaseArr = data(checkedState, tools);
+        props.onSubmit(databaseArr);
     }
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             {rows}
-        </>
+            <button type='submit'>submit</button>
+        </form>
     )
 
 }
