@@ -2,7 +2,7 @@ export const Txt = (githubUserName, linkedInURL, height, width, theme, languages
     let downloadTxtFile = () => {
         const element = document.createElement("a");
         const file = new Blob([
-           `<!--I was too lazy to code the copy to clipboard function so just copy and paste this onto
+            `<!--I was too lazy to code the copy to clipboard function so just copy and paste this onto
 your readme file-->
 <!--If you are using this generator you agree to not deleting the last comment on file-->
 <!--it is to give me credit for making this generator-->
@@ -62,3 +62,4 @@ do not delete the line above!
         element.click();
     }
 }
+
