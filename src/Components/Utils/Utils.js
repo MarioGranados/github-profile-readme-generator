@@ -31,24 +31,26 @@ export const checkBoxes = (checkedState, tools, setCheckedState) => {
     return rows;
 }
 
-export let logoDiv = (imgURL, URL, logoName, width, height) => {
-    return `<a href="${URL}" target="_blank" rel="noreferrer">
-        <img src="${imgURL}"
-             alt="${logoName}" width="${width}" height="${height}"/> </a>`
+export let logoDiv = (width, height, index) => {
+    return `<a href="${links[index]}" target="_blank" rel="noreferrer">
+        <img src="${imgURL[index]}"
+             alt="${names[index]}" width="${width}" height="${height}"/> </a>`
 }
 
-export let validation = (checkedLang, w, h) => {
-    let width = w;
-    let height = h;
-    let row = []
-
-    for (let i = 0; i < names.length; i++) {
-        if (checkedLang[i]) {
-            row.push(logoDiv(imgURL[i], URL[i], names[i], width, height))
-        }
-    }
-    return row;
+export let socialMedia = (width, height, index, userName) => {
+    return `<a href="https://${social[index]}.com/${userName[index]}" target="_blank" rel="noreferrer">
+        <img src="${socialLogos[index]}"
+             alt="${social[index]}" width="${width}" height="${height}"/> </a>`
 }
+
+let social = ["Twitter", "HackerRank", "CodeWars", "Instagram", "LinkedIn", "Github"];
+let socialLogos = ["https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png",
+    "https://cdn.worldvectorlogo.com/logos/hackerrank.svg",
+    "https://docs.codewars.com/logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png",
+    "https://cdn-icons-png.flaticon.com/512/174/174857.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"]
+
 
 export const names = [
     /*programming languages*/
@@ -165,7 +167,7 @@ export const imgURL = [
     "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sketch_Logo.svg/850px-Sketch_Logo.svg.png",
 ];
 
-export const URL = [
+export const links = [
     "Python",
     "C",
     "Java",
@@ -220,3 +222,68 @@ export const URL = [
     "CSS",
     "Sketch",
 ];
+
+
+
+/*downldad button thingy mgisdfjkdsljflksfd*/
+
+export const Txt = (githubUserName, height, width, theme, greeting, subtitle, logos, social) => {
+
+    const element = document.createElement("a");
+    const file = new Blob([
+        `<!--I was too lazy to code the copy to clipboard function so just copy and paste this onto
+your readme file-->
+<!--If you are using this generator you agree to not deleting the last comment on file-->
+<!--it is to give me credit for making this generator-->
+<!--you can delete the lines about this-->
+
+<!--section greeting-->
+<h1 align="center">${greeting}</h1>
+<h3 align="center">${subtitle}</h3>
+<!--section greeting ends-->
+
+<!--trophies-->
+<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=${githubUserName}" alt="${githubUserName}" /></a> </p>
+<!--trophies end-->
+
+<!--social media bgins-->
+${social}
+<!--socialMediaEnds-->
+
+<!--section-->
+
+<h3 align="center">Languages & Tools:</h3>
+<div align="center">
+<!--here are the imports-->
+${logos}
+<!--here are imports-->
+<!--end section-->
+
+
+<!--you get the idea-->
+
+<p align="center">
+<a href="https://github.com/${githubUserName}">
+  <img height="140em" align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=${githubUserName}&layout=compact&theme=${theme}&langs_count=10" />
+</a>
+<a href="https://github.com/${githubUserName}">
+  <img height="140em" align="center" src="https://github-readme-stats.vercel.app/api?username=${githubUserName}&theme=${theme}&layout=compact&repo=convoychat&hide=stars,prs&custom_title=My GitHub Stats" />
+</a>
+</p><br>
+
+<div align="center">
+<img height="25em" src="https://komarev.com/ghpvc/?username=${githubUserName}" />
+</div>
+<!--ends here-->
+
+<!--
+do not delete this line
+blah blah blah blah blah
+do not delete the line above!
+-->`
+    ], {type: 'text/plain'});
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+}

@@ -36,7 +36,7 @@ const Social = (props) => {
                     <label htmlFor={col1[i]}>{col1[i]}</label>
                     <input type="text"
                            className="form-control"
-                           placeholder={'https://www.' + col1[i] + '.com'}
+                           placeholder={col1[i] + ' Username'}
                            onChange={
                                (e) => {handleCol1(e, i)}
                            }
@@ -47,10 +47,11 @@ const Social = (props) => {
                     <label htmlFor={col2[i]}>{col2[i]}</label>
                     <input type="text"
                            className="form-control"
-                           placeholder={'https://www.' + col2[i] + '.com'}
+                           placeholder={col2[i] + ' Username'}
                            onChange={
                                (e) => {handleCol2(e, i)}
                            }
+
                     />
                 </div>
             </div>
@@ -58,6 +59,7 @@ const Social = (props) => {
     }
     return (
         <div onChange={handleChange}>
+            <h4 className={'text-center'}>I was too lazy for validation, just type your username</h4>
             {rows}
         </div>
     )

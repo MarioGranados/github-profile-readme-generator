@@ -6,7 +6,7 @@ import BackEnd from "./BackEnd";
 import Database from "./Database";
 import AddOns from "./AddOns";
 import Testing from "./Testing";
-import {checkedLang} from "./Utils/Utils";
+import {imgURL, logoDiv, names, links, Txt, socialMedia} from "./Utils/Utils";
 
 const Hero = () => {
     let formInfo = {
@@ -52,10 +52,44 @@ const Hero = () => {
         console.log("subtitle: " + formInfo.subtitle);
     }
 
+    let str = '';
+    let social = '';
+    let handleSubmitForm = (e, str) => {
+        let megaArr = formInfo.languages.concat(formInfo.database, formInfo.backEnd, formInfo.testing, formInfo.frontEnd)
+        e.preventDefault()
+        console.log(megaArr)
+
+        for (let i = 0; i < names.length; i++) {
+            if (megaArr[i] === names[i]) {
+                str += logoDiv(40, 40, i)
+            }
+        }
+        let greeting = formInfo.greeting.toString()
+        let subtitle = formInfo.subtitle.toString()
+
+        console.log(formInfo.social)
+/*        0: "twitter.com"
+        1: "hackerrank"
+        2: "codewars"
+        3: "twitter.com"
+        4: "linkedin"
+        5: "github"*/
+
+        for(let i = 0; i < formInfo.social.length; i++) {
+            if(formInfo.social[i] != null) {
+                social += socialMedia(40,40, i, formInfo.social[i])
+            }
+        }
+
+        let githubUserName = formInfo.social[formInfo.social.length - 1];
+        console.log(githubUserName)
+
+        Txt(githubUserName,  40, 40, 'dark', greeting, subtitle, str, social);
+    }
+
     return (<>
         <form className="container" onSubmit={(e) => {
-            e.preventDefault();
-            console.log(formInfo)
+            handleSubmitForm(e, str)
         }
         }>
             <h1 className='font-weight-bold text-center'>Github Profile Readme Generator</h1>
@@ -85,10 +119,13 @@ const Hero = () => {
             <h3 className="mt-5 font-weight-bold ">Social Media</h3>
             <hr/>
             <Social onSubmit={setSocial}/>
-            <h3 className="mt-5 font-weight-bold ">Extra Stuff</h3>
+{/*            <h3 className="mt-5 font-weight-bold ">Extra Stuff</h3>*/}
             <hr/>
             <AddOns/>
-            <input type={'submit'} className='btn btn-lg btn-primary'/>
+            <div className="justify-content-center d-flex">
+                <input type={'submit'} className='my-5 btn btn-lg btn-primary' value='Download file'/>
+            </div>
+
         </form>
         {/*the submit form will be added later that will let you chose from templates*/}
         {/*<SubmitF/>*/}

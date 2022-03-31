@@ -3,26 +3,23 @@ import {data, checkBoxes} from "./Utils/Utils";
 
 
 const ProgrammingLanguages = (props) => {
-    let languages = ["Python",
+    let languages = [
+        "Python",
         "C",
         "Java",
         "C++",
         "C#",
-        "Visual Basic",
         "JavaScript",
-        "Assembly language",
         "SQL",
         "Swift",
         "R",
         "PHP",
-        "Classic Visual Basic",
-        "Groovy",
         "Ruby",
         "Delphi/Object Pascal",
         "Fortran",
         "Perl",
         "Go",
-        "MATLAB"];
+        "MATLAB"]
     let arr = [];
 
     /*this function is will be accessible from utils, since I'm going to basically copy
