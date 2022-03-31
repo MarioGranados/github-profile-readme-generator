@@ -7,16 +7,14 @@ const Testing = (props) => {
         new Array(tools.length).fill(false));
     let testing = [];
     let rows = checkBoxes(checkedState, tools, setCheckedState)
-    let handleSubmit = (e) => {
-        e.preventDefault();
+    let handleChange = () => {
         testing = data(checkedState, tools);
         props.onSubmit(testing);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <div onChange={handleChange}>
             {rows}
-            <button type='submit'>submit</button>
-        </form>
+        </div>
     )
 
 }

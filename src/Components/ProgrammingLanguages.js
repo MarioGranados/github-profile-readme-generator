@@ -63,17 +63,14 @@ const ProgrammingLanguages = (props) => {
         );
     }*/
 
-    let handleSubmit = (e) => {
-        e.preventDefault();
-        arr = data(checkedState, languages);
+    let handleChange = () => {
+        let arr = data(checkedState, languages);
         props.onSubmit(arr);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <div onChange={handleChange}>
             {rows}
-
-            <button type={"submit"}>submit</button>
-        </form>
+        </div>
     )
 }
 export default ProgrammingLanguages;

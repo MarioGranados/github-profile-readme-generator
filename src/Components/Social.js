@@ -6,38 +6,50 @@ const Social = (props) => {
     let col2 = ["Instagram", "HackerRank", "CodeWars"];
     let rows = [];
 
-    const [input, setInput] = useState([]);
+    const [input, setInput] = useState(
+        new Array(col1.length).fill(null)
+    );
+    const [input2, setInput2] = useState(
+        new Array(col2.length).fill(null)
+    )
 
-    let handleChange = (e) => {
-        setInput(arr => [...arr, e.target.value]);
+    let handleChange = () => {
+        props.onSubmit(input.concat(input2));
+    }
+
+    let handleCol1 = (e, index) => {
+        input2[index] = e.target.value
+        setInput2(input2)
+        console.log(input2)
+    }
+
+    let handleCol2 = (e, index) => {
+        input[index] = e.target.value
+        setInput(input)
         console.log(input)
     }
 
-    let formSubmit = (e) => {
-        e.preventDefault();
-        props.onSubmit(input);
-    }
-
-    for (let i = 1; i < col1.length; i++) {
+    for (let i = 0; i < col1.length; i++) {
         rows.push(
             <div className="row">
                 <div className="col">
                     <label htmlFor={col1[i]}>{col1[i]}</label>
                     <input type="text"
                            className="form-control"
-                           placeholder={col1[i]}
+                           placeholder={'https://www.' + col1[i] + '.com'}
                            onChange={
-                               handleChange
+                               (e) => {handleCol1(e, i)}
                            }
+
                     />
                 </div>
                 <div className="col">
                     <label htmlFor={col2[i]}>{col2[i]}</label>
                     <input type="text"
                            className="form-control"
-                           placeholder={col2[i]}
+                           placeholder={'https://www.' + col2[i] + '.com'}
                            onChange={
-                               handleChange
+                               (e) => {handleCol2(e, i)}
                            }
                     />
                 </div>
@@ -45,10 +57,9 @@ const Social = (props) => {
         );
     }
     return (
-        <form onSubmit={formSubmit}>
+        <div onChange={handleChange}>
             {rows}
-            <button type='submit'>submit</button>
-        </form>
+        </div>
     )
 
 }

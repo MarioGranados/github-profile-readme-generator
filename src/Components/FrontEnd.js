@@ -3,7 +3,7 @@ import {useState} from "react";
 
 const FrontEnd = (props) => {
     let arr = [];
-    let tools = ["Web.com",
+    let tools = [
     "Angular.JS",
     "Chrome DevTools",
     "Sass",
@@ -20,16 +20,14 @@ const FrontEnd = (props) => {
         new Array(tools.length).fill(false));
     let frontEndArr = [];
     let rows = checkBoxes(checkedState, tools, setCheckedState)
-    let handleSubmit = (e) => {
-        e.preventDefault();
+    let handleChange = () => {
         frontEndArr = data(checkedState, tools);
         props.onSubmit(frontEndArr);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <div onChange={handleChange}>
             {rows}
-            <button type='submit'>submit</button>
-        </form>
+        </div>
     )
 
 }

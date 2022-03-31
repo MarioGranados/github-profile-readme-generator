@@ -10,16 +10,14 @@ const BackEnd = (props) => {
 
     let rows = checkBoxes(checkedState, tools, setCheckedState);
 
-    let handleSubmit = (e) => {
-        e.preventDefault();
+    let handleChange = () => {
         backEndArr = data(checkedState, tools);
         props.onSubmit(backEndArr);
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <div onChange={handleChange}>
             {rows}
-            <button type='submit'>submit</button>
-        </form>
+        </div>
     )
 
 }

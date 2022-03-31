@@ -14,7 +14,7 @@ const Header = (props) => {
     }
 
     return (
-        <form onChange={handleSubmit}>
+        <div onChange={handleSubmit}>
             <div className="form-group">
                 <label htmlFor="greeting">Greeting</label>
                 <input type="text" className="form-control" id="greeting"
@@ -34,7 +34,7 @@ const Header = (props) => {
                        }}
                 />
             </div>
-        </form>
+        </div>
     );
 }
 export default Header;
