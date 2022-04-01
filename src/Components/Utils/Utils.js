@@ -40,9 +40,11 @@ export let logoDiv = (width, height, index) => {
 }
 
 export let socialMedia = (width, height, index, userName) => {
-    return `<a href="https://${social[index]}.com/${userName[index]}" target="_blank" rel="noreferrer">
+    if(social[index] !== "Github") {
+        return `<a href="https://${social[index]}.com/${userName[index]}" target="_blank" rel="noreferrer">
         <img src="${socialLogos[index]}"
              alt="${social[index]}" width="${width}" height="${height}"/> </a>`
+    }
 }
 
 let social = ["Twitter", "HackerRank", "CodeWars", "Instagram", "LinkedIn", "Github"];
@@ -122,7 +124,7 @@ export const imgURL = [
     "https://i.pinimg.com/736x/a2/dc/32/a2dc3249364449a49f01a6275d277b8c.jpg",
     "https://seeklogo.com/images/C/c-sharp-c-logo-02F17714BA-seeklogo.com.png",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Javascript-shield.svg/1200px-Javascript-shield.svg.png",
-    "https://www.svgrepo.com/show/117653/sql-file-format.svg",
+    "https://icons.veryicon.com/png/o/application/designer-icon/sql-5.png",
     "https://cdn.worldvectorlogo.com/logos/swift-15.svg",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/2560px-R_logo.svg.png",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/2560px-PHP-logo.svg.png",
@@ -136,7 +138,7 @@ export const imgURL = [
     "https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png",
     "https://download.logo.wine/logo/PostgreSQL/PostgreSQL-Logo.wine.png",
     "https://cdn.worldvectorlogo.com/logos/redis.svg",
-    "http://cdn.onlinewebfonts.com/svg/img_248288.png",
+    "https://w7.pngwing.com/pngs/504/716/png-transparent-cylindrical-red-and-white-illustration-computer-icons-oracle-database-db-logo-cloud-database-red-oracle-database-thumbnail.png",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Apache_CouchDB_logo.svg/2027px-Apache_CouchDB_logo.svg.png",
     "https://upload.wikimedia.org/wikipedia/commons/b/bb/Apache_Hive_logo.svg",
     "https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg",
@@ -159,7 +161,7 @@ export const imgURL = [
     "https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg",
     "https://camo.githubusercontent.com/c38bf4a44750bd9b576a2259a5074dd277d63f0a412b5b1f31f54e516711ef5b/687474703a2f2f736173732d6c616e672e636f6d2f6173736574732f696d672f7374796c6567756964652f7365616c2d636f6c6f722d61656630333534632e706e67",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Grunt.svg/1200px-Grunt.svg.png",
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1116997/codepen.png",
+    "https://orioni.co/nmedia/png/codepen-5982.png",
     "https://cdn.worldvectorlogo.com/logos/typescript-2.svg",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Npm-logo.svg/2560px-Npm-logo.svg.png",
@@ -249,7 +251,10 @@ your readme file-->
 <!--trophies end-->
 
 <!--social media bgins-->
+<div align="center">
 ${social}
+</div>
+
 <!--socialMediaEnds-->
 
 <!--section-->
@@ -285,7 +290,7 @@ do not delete the line above!
 -->`
     ], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
-    element.download = "myFile.txt";
+    element.download = "MarioIsTheCoolestDudeOnTheSouth.txt";
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
 }
