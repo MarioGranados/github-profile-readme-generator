@@ -8,11 +8,15 @@
 
 
 
-
+<!--I was too lazy to code the copy to clipboard function so just copy and paste this onto
+your readme file-->
+<!--If you are using this generator you agree to not deleting the last comment on file-->
+<!--it is to give me credit for making this generator-->
+<!--you can delete the lines about this-->
 
 <!--section greeting-->
-<h1 align="center">Hi I'm Mario Granados</h1>
-<h3 align="center">I like to solve my problems with code!</h3>
+<h1 align="center"></h1>
+<h3 align="center"></h3>
 <!--section greeting ends-->
 
 <!--trophies-->
@@ -21,15 +25,9 @@
 
 <!--social media bgins-->
 <div align="center">
-<a href="https://www.twitter.com/mariogranados97" target="_blank" rel="noreferrer">
+<a href="https://www.twitter.com/" target="_blank" rel="noreferrer">
         <img src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"
-             alt="twitter" width="60" height="60"/></a><a href="https://www.HackerRank.com/mariogranados97" target="_blank" rel="noreferrer">
-        <img src="https://cdn.worldvectorlogo.com/logos/hackerrank.svg"
-             alt="HackerRank" width="60" height="60"/></a><a href="https://www.CodeWars.com/mariogranados97" target="_blank" rel="noreferrer">
-        <img src="https://docs.codewars.com/logo.svg"
-             alt="CodeWars" width="60" height="60"/></a><a href="https://www.instagram.com/peacelovetakos" target="_blank" rel="noreferrer">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Instagram.svg/2048px-Instagram.svg.png"
-             alt="instagram" width="60" height="60"/></a><a href="https://www.LinkedIn.com/in/marioagranados" target="_blank" rel="noreferrer">
+             alt="twitter" width="60" height="60"/></a><a href="https://www.LinkedIn.com/in/marioagranados" target="_blank" rel="noreferrer">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
              alt="LinkedIn" width="60" height="60"/></a>
 </div>
@@ -41,7 +39,19 @@
 <h3 align="center">Languages & Tools:</h3>
 <div align="center">
 <!--here are the imports-->
-
+<a href="Python" target="_blank" rel="noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/220px-Python-logo-notext.svg.png?20100317150552"
+             alt="Python" width="65" height="60"/> </a><a href="Java" target="_blank" rel="noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Javascript-shield.svg/1200px-Javascript-shield.svg.png"
+             alt="JavaScript" width="65" height="60"/> </a><a href="mysql" target="_blank" rel="noreferrer">
+        <img src="https://download.logo.wine/logo/MySQL/MySQL-Logo.wine.png"
+             alt="mysql" width="65" height="60"/> </a><a href="node.js" target="_blank" rel="noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Spring_Framework_Logo_2018.svg/800px-Spring_Framework_Logo_2018.svg.png"
+             alt="node.js" width="65" height="60"/> </a><a href="spring" target="_blank" rel="noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png"
+             alt="spring" width="65" height="60"/> </a><a href="Jasmine" target="_blank" rel="noreferrer">
+        <img src="https://seeklogo.com/images/K/karma-logo-B204C2D2E3-seeklogo.com.png"
+             alt="Jasmine" width="65" height="60"/> </a>
 <!--here are imports-->
 <!--end section-->
 
