@@ -70,19 +70,11 @@ const Hero = () => {
 
         let placeholder = []
         let megaArr = placeholder.concat(formInfo.languages, formInfo.database, formInfo.backEnd, formInfo.testing, formInfo.frontEnd)
-        console.log(megaArr);
-        console.log(names.length)
         for (let i = 0; i < names.length; i++) {
             if (megaArr[i] === names[i]) {
                 str += logoDiv(40, 40, i)
             }
         }
-        console.log(str);
-        console.log("----------------")
-        let greeting = formInfo.greeting
-        let subtitle = formInfo.subtitle
-
-        console.log(formInfo.social)
         /*        0: "twitter.com"
                 1: "hackerrank"
                 2: "codewars"
@@ -91,15 +83,14 @@ const Hero = () => {
                 5: "github"*/
 
         for (let i = 0; i < formInfo.social.length - 1; i++) {
-            console.log(i + social[i])
             if (formInfo.social[i] != null) {
-                social += socialMedia(60, 60, i, formInfo.social[i])
+                social += socialMedia(60, 60, i, formInfo.social)
             }
         }
 
         let githubUserName = formInfo.social[formInfo.social.length - 1];
 
-        Txt(githubUserName,  40, 40, 'dark', greeting, subtitle, str, social);
+        Txt(githubUserName,  60, 80, 'dark', formInfo.greeting, formInfo.subtitle, str, social);
     }
 
     return (<>
