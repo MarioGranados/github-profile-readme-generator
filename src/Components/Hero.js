@@ -6,8 +6,9 @@ import BackEnd from "./BackEnd";
 import Database from "./Database";
 import AddOns from "./AddOns";
 import Testing from "./Testing";
-import {imgURL, logoDiv, names, links, Txt, socialMedia} from "./Utils/Utils";
-
+import {logoDiv, names, socialMedia} from "./Utils/Utils";
+/*excuse my terrible coding, I was in the zone and realized I did not use any comments
+* sooooo.....yeah...I hate myself for it lol*/
 const Hero = () => {
     let formInfo = {
         greeting: '',
@@ -19,28 +20,38 @@ const Hero = () => {
         testing: [],
         social: [],
     }
+
+    let fillIfEmpty = (arr, length) => {
+        let newArr = []
+        if (arr.length === 0) {
+            for (let i = 0; i < length; i++) {
+                newArr[i] = false
+            }
+        }
+        return newArr;
+    }
+
+    formInfo.languages = fillIfEmpty(formInfo.languages, 16)
+    formInfo.database = fillIfEmpty(formInfo.database, 9);
+    formInfo.backEnd = fillIfEmpty(formInfo.backEnd, 7);
+    formInfo.testing = fillIfEmpty(formInfo.testing, 9);
+    formInfo.frontEnd = fillIfEmpty(formInfo.frontEnd, 11)
     /*there may be a simpler way to do this
     * JSON seemed like the way to go for me tho*/
     let setLanguages = (data) => {
-        console.log('lang')
         formInfo.languages = data;
     }
     let setFrontEnd = (data) => {
-        console.log('Front End')
         formInfo.frontEnd = data;
     }
     let setBackEnd = (data) => {
-        console.log('backend')
         formInfo.backEnd = data;
     }
     let setDatabase = (data) => {
-        console.log('database')
         formInfo.database = data;
     }
     let setTesting = (data) => {
-        console.log('testing')
         formInfo.testing = data;
-        console.log(formInfo)
     }
     let setSocial = (data) => {
         formInfo.social = data;
@@ -48,43 +59,46 @@ const Hero = () => {
     let setData = (data) => {
         formInfo.greeting = data[0];
         formInfo.subtitle = data[1];
-        console.log("greeting : " + formInfo.greeting);
-        console.log("subtitle: " + formInfo.subtitle);
     }
+
 
     let str = '';
     let social = '';
     let handleSubmitForm = (e, str) => {
-        let megaArr = formInfo.languages.concat(formInfo.database, formInfo.backEnd, formInfo.testing, formInfo.frontEnd)
-        e.preventDefault()
-        console.log(megaArr)
 
+        e.preventDefault()
+
+        let placeholder = []
+        let megaArr = placeholder.concat(formInfo.languages, formInfo.database, formInfo.backEnd, formInfo.testing, formInfo.frontEnd)
+        console.log(megaArr);
+        console.log(names.length)
         for (let i = 0; i < names.length; i++) {
             if (megaArr[i] === names[i]) {
                 str += logoDiv(40, 40, i)
             }
         }
+        console.log(str);
+        console.log("----------------")
         let greeting = formInfo.greeting.toString()
         let subtitle = formInfo.subtitle.toString()
 
-        console.log(formInfo.social)
-/*        0: "twitter.com"
-        1: "hackerrank"
-        2: "codewars"
-        3: "twitter.com"
-        4: "linkedin"
-        5: "github"*/
+        //console.log(formInfo.social)
+        /*        0: "twitter.com"
+                1: "hackerrank"
+                2: "codewars"
+                3: "twitter.com"
+                4: "linkedin"
+                5: "github"*/
 
-        for(let i = 0; i < formInfo.social.length; i++) {
-            if(formInfo.social[i] != null) {
-                social += socialMedia(40,40, i, formInfo.social[i])
+        for (let i = 0; i < formInfo.social.length; i++) {
+            if (formInfo.social[i] != null) {
+                social += socialMedia(40, 40, i, formInfo.social[i])
             }
         }
 
         let githubUserName = formInfo.social[formInfo.social.length - 1];
-        console.log(githubUserName)
 
-        Txt(githubUserName,  40, 40, 'dark', greeting, subtitle, str, social);
+        //Txt(githubUserName,  40, 40, 'dark', greeting, subtitle, str, social);
     }
 
     return (<>
@@ -119,7 +133,7 @@ const Hero = () => {
             <h3 className="mt-5 font-weight-bold ">Social Media</h3>
             <hr/>
             <Social onSubmit={setSocial}/>
-{/*            <h3 className="mt-5 font-weight-bold ">Extra Stuff</h3>*/}
+            {/*            <h3 className="mt-5 font-weight-bold ">Extra Stuff</h3>*/}
             <hr/>
             <AddOns/>
             <div className="justify-content-center d-flex">

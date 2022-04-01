@@ -18,11 +18,9 @@ const FrontEnd = (props) => {
     "Sketch"]
     const [checkedState, setCheckedState] = useState(
         new Array(tools.length).fill(false));
-    let frontEndArr = [];
     let rows = checkBoxes(checkedState, tools, setCheckedState)
     let handleChange = () => {
-        frontEndArr = data(checkedState, tools);
-        props.onSubmit(frontEndArr);
+        props.onSubmit(data(checkedState, tools));
     }
     return (
         <div onChange={handleChange}>

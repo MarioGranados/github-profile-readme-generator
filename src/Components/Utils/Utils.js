@@ -4,6 +4,8 @@ export const data = (checkedState, languages) => {
     for (let i = 0; i < languages.length; i++) {
         if (checkedState[i]) {
             checkedLang.push(languages[i]);
+        } else {
+            checkedLang.push(false);
         }
     }
     return checkedLang
@@ -11,7 +13,7 @@ export const data = (checkedState, languages) => {
 
 export const checkBoxes = (checkedState, tools, setCheckedState) => {
     let rows = [];
-    for (let i = 1; i < tools.length; i++) {
+    for (let i = 0; i < tools.length; i++) {
         rows.push(<>
             <div className="form-check form-check-inline">
                 <input className="form-check-input"

@@ -3,8 +3,7 @@ import {data, checkBoxes} from "./Utils/Utils";
 
 
 const ProgrammingLanguages = (props) => {
-    let languages = [
-        "Python",
+    let tools = ["Python",
         "C",
         "Java",
         "C++",
@@ -20,7 +19,6 @@ const ProgrammingLanguages = (props) => {
         "Perl",
         "Go",
         "MATLAB"]
-    let arr = [];
 
     /*this function is will be accessible from utils, since I'm going to basically copy
     * and paste this form since I'm too lazy to type
@@ -39,8 +37,8 @@ const ProgrammingLanguages = (props) => {
         }*/
 
     const [checkedState, setCheckedState] = useState(
-        new Array(languages.length).fill(false));
-    let rows = checkBoxes(checkedState, languages, setCheckedState)
+        new Array(tools.length).fill(false));
+    let rows = checkBoxes(checkedState, tools, setCheckedState)
     // console.log(checkedState);
 
 /*    for (let i = 0; i < languages.length; i++) {
@@ -61,8 +59,7 @@ const ProgrammingLanguages = (props) => {
     }*/
 
     let handleChange = () => {
-        let arr = data(checkedState, languages);
-        props.onSubmit(arr);
+        props.onSubmit(data(checkedState, tools));
     }
     return (
         <div onChange={handleChange}>
