@@ -72,7 +72,7 @@ const Hero = () => {
         let megaArr = placeholder.concat(formInfo.languages, formInfo.database, formInfo.backEnd, formInfo.testing, formInfo.frontEnd)
         for (let i = 0; i < names.length; i++) {
             if (megaArr[i] === names[i]) {
-                str += logoDiv(40, 40, i)
+                str += logoDiv(65, 60, i)
             }
         }
         /*        0: "twitter.com"
