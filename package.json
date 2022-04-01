@@ -1,5 +1,6 @@
 {
-  "name": "https://mariogranados.github.io/github-profile-readme-generator/",
+  "homepage": "https://mariogranados.github.io/github-profile-readme-generator/",
+  "name": "github-profile-readme-generator",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
