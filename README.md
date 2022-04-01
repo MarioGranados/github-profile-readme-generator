@@ -1,5 +1,5 @@
-#Github ReadMe Profile Generator
-#This generator was used to provide the sample below
+Github ReadMe Profile Generator
+This generator was used to provide the sample below
 
 <!--I was too lazy to code the copy to clipboard function so just copy and paste this onto
 your readme file-->
