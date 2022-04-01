@@ -1,4 +1,3 @@
-
 export const data = (checkedState, languages) => {
     let checkedLang = []
     for (let i = 0; i < languages.length; i++) {
@@ -40,18 +39,16 @@ export let logoDiv = (width, height, index) => {
 }
 
 export let socialMedia = (width, height, index, userName) => {
-    if(social[index] !== "Github") {
-        return `<a href="https://${social[index]}.com/${userName[index]}" target="_blank" rel="noreferrer">
+    return `<a href="https://www.${social[index]}.com/${userName[index]}" target="_blank" rel="noreferrer">
         <img src="${socialLogos[index]}"
              alt="${social[index]}" width="${width}" height="${height}"/> </a>`
-    }
 }
 
-let social = ["Twitter", "HackerRank", "CodeWars", "Instagram", "LinkedIn", "Github"];
+let social = ["Instagram", "HackerRank", "CodeWars", "twitter", "LinkedIn", "Github"];
 let socialLogos = ["https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png",
     "https://cdn.worldvectorlogo.com/logos/hackerrank.svg",
     "https://docs.codewars.com/logo.svg",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Instagram.svg/2048px-Instagram.svg.png",
     "https://cdn-icons-png.flaticon.com/512/174/174857.png",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"]
 
@@ -226,7 +223,6 @@ export const links = [
     "CSS",
     "Sketch",
 ];
-
 
 
 /*downldad button thingy mgisdfjkdsljflksfd*/

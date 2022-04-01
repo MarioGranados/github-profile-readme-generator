@@ -79,10 +79,10 @@ const Hero = () => {
         }
         console.log(str);
         console.log("----------------")
-        let greeting = formInfo.greeting.toString()
-        let subtitle = formInfo.subtitle.toString()
+        let greeting = formInfo.greeting
+        let subtitle = formInfo.subtitle
 
-        //console.log(formInfo.social)
+        console.log(formInfo.social)
         /*        0: "twitter.com"
                 1: "hackerrank"
                 2: "codewars"
@@ -90,9 +90,10 @@ const Hero = () => {
                 4: "linkedin"
                 5: "github"*/
 
-        for (let i = 0; i < formInfo.social.length; i++) {
+        for (let i = 0; i < formInfo.social.length - 1; i++) {
+            console.log(i + social[i])
             if (formInfo.social[i] != null) {
-                social += socialMedia(40, 40, i, formInfo.social[i])
+                social += socialMedia(60, 60, i, formInfo.social[i])
             }
         }
 
