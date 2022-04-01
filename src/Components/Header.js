@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {getValue} from "@testing-library/user-event/dist/utils";
 
 const Header = (props) => {
 
@@ -6,11 +7,8 @@ const Header = (props) => {
     const [subtitle, setSubtitle] = useState("I like to solve all my problems with code!");
 
     /*props to parent component*/
-    let handleSubmit = (e) => {
-        e.preventDefault()
-        let arr = [greeting, subtitle]
-
-        props.onSubmit(arr);
+    let handleSubmit = () => {
+        props.onSubmit([greeting, subtitle]);
     }
 
     return (
@@ -30,7 +28,7 @@ const Header = (props) => {
                 <input type="text" className="form-control" id="subtitle"
                        placeholder={subtitle}
                        onChange={e => {
-                           setSubtitle(e.target.value)
+                           setSubtitle(e.target.value);
                        }}
                 />
             </div>

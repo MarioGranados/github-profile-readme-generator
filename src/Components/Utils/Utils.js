@@ -41,10 +41,10 @@ export let logoDiv = (width, height, index) => {
 export let socialMedia = (width, height, index, userName) => {
     return `<a href="https://www.${social[index]}.com/${userName[index]}" target="_blank" rel="noreferrer">
         <img src="${socialLogos[index]}"
-             alt="${social[index]}" width="${width}" height="${height}"/> </a>`
+             alt="${social[index]}" width="${width}" height="${height}"/></a>`
 }
 
-let social = ["Instagram", "HackerRank", "CodeWars", "twitter", "LinkedIn", "Github"];
+let social = ["twitter", "HackerRank", "CodeWars", "instagram", "LinkedIn", "Github"];
 let socialLogos = ["https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png",
     "https://cdn.worldvectorlogo.com/logos/hackerrank.svg",
     "https://docs.codewars.com/logo.svg",
@@ -286,7 +286,7 @@ do not delete the line above!
 -->`
     ], {type: 'text/plain'});
     element.href = URL.createObjectURL(file);
-    element.download = "MarioIsTheCoolestDudeOnTheSouth.txt";
+    element.download = "MarioIsTheCoolestDudeOnTheSouth.md";
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
 }

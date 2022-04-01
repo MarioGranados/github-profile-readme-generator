@@ -14,19 +14,17 @@ const Social = (props) => {
     )
 
     let handleChange = () => {
-        props.onSubmit(input.concat(input2));
+        props.onSubmit(input2.concat(input));
     }
 
     let handleCol1 = (e, index) => {
-        input2[index] = e.target.value
-        setInput2(input2)
-        console.log(input2)
-    }
-
-    let handleCol2 = (e, index) => {
         input[index] = e.target.value
         setInput(input)
-        console.log(input)
+    }
+
+    let handleCol2 = (event, index) => {
+        input2[index] = event.target.value
+        setInput2(input2)
     }
 
     for (let i = 0; i < col1.length; i++) {
@@ -49,7 +47,7 @@ const Social = (props) => {
                            className="form-control"
                            placeholder={col2[i] + ' Username'}
                            onChange={
-                               (e) => {handleCol2(e, i)}
+                               (event) => {handleCol2(event, i)}
                            }
 
                     />
