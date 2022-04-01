@@ -6,7 +6,7 @@ import BackEnd from "./BackEnd";
 import Database from "./Database";
 import AddOns from "./AddOns";
 import Testing from "./Testing";
-import {logoDiv, names, socialMedia} from "./Utils/Utils";
+import {logoDiv, names, socialMedia, Txt} from "./Utils/Utils";
 /*excuse my terrible coding, I was in the zone and realized I did not use any comments
 * sooooo.....yeah...I hate myself for it lol*/
 const Hero = () => {
@@ -98,7 +98,7 @@ const Hero = () => {
 
         let githubUserName = formInfo.social[formInfo.social.length - 1];
 
-        //Txt(githubUserName,  40, 40, 'dark', greeting, subtitle, str, social);
+        Txt(githubUserName,  40, 40, 'dark', greeting, subtitle, str, social);
     }
 
     return (<>
