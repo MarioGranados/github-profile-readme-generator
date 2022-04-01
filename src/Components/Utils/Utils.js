@@ -117,8 +117,8 @@ export const names = [
 export const imgURL = [
     "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/220px-Python-logo-notext.svg.png?20100317150552",
     "https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png",
-    "https://spng.pngfind.com/pngs/s/74-744402_java-logo-png-transparent-svg-vector-freebie-supply.png",
-    "https://i.pinimg.com/736x/a2/dc/32/a2dc3249364449a49f01a6275d277b8c.jpg",
+    "https://upload.wikimedia.org/wikipedia/de/e/e1/Java-Logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png",
     "https://seeklogo.com/images/C/c-sharp-c-logo-02F17714BA-seeklogo.com.png",
     "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Javascript-shield.svg/1200px-Javascript-shield.svg.png",
     "https://icons.veryicon.com/png/o/application/designer-icon/sql-5.png",
